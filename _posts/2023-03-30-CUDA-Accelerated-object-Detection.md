@@ -1,10 +1,11 @@
 ---
 title: CUDA based mmWave Radar Object Detection acceleration
-date: 2023-03-30 dont know whhat time it is
+date: 2023-03-30 dont know what time it is
 categories: [Hardware Acceleration, projects]
 tags: [CUDA]
 ---
 ## Summary
+
 We are aiming to accelerate a object detection algorithm using CUDA to achieve pipelined low-latency real-time processing. We will also try to accelerate this application using OMP for benchmarking and evaluation.  
 
 ## Background

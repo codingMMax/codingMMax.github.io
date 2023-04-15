@@ -19,7 +19,7 @@ timezone:
 # ↓ --------------------------
 
 title: Max HU # the main title
-
+ 
 tagline: Personal Page for Max HU # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
