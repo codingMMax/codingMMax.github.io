@@ -1,0 +1,155 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Max HU</title>
+  <subtitle>This webpage is only personal use for Max.</subtitle>
+  <updated>2023-04-15T17:27:30-04:00</updated>
+  <author>
+    <name>Jiajun (Max) Hu</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023 Jiajun (Max) Hu </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Butterfly FFT Computation in CUDA</title>
+    <link href="http://localhost:4000/posts/ButterFly-FFT-Computation-in-CUDA/" rel="alternate" type="text/html" title="Butterfly FFT Computation in CUDA" />
+    <published>2023-04-10T00:00:00-04:00</published>
+  
+    <updated>2023-04-10T00:00:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/ButterFly-FFT-Computation-in-CUDA/</id>
+    <content src="http://localhost:4000/posts/ButterFly-FFT-Computation-in-CUDA/" />
+    <author>
+      <name>Jiajun (Max) Hu</name>
+    </author>
+
+  
+    
+    <category term="Hardware Acceleration" />
+    
+    <category term="projects" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Butterfly FFT computation in CUDA
+
+I encounter the FFT computation problem in my mmWave Signal Processing Acceleration project. Initially, my teammate implement a well-defined FFT operator in CPU version using butterfly computation method, however, the written CPU version does not specify the parallel features and has very coupled sequential dependency. Therefore, I am trying to re-write the bu...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Implementing-Message-Passing Features &amp; Challenges</title>
+    <link href="http://localhost:4000/posts/Implementing-Message-Passing/" rel="alternate" type="text/html" title="Implementing-Message-Passing Features &amp; Challenges" />
+    <published>2023-03-30T00:00:00-04:00</published>
+  
+    <updated>2023-03-30T00:00:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/Implementing-Message-Passing/</id>
+    <content src="http://localhost:4000/posts/Implementing-Message-Passing/" />
+    <author>
+      <name>Jiajun (Max) Hu</name>
+    </author>
+
+  
+    
+    <category term="Parallel Programming" />
+    
+    <category term="Course" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Implementing Message Passing
+
+Shared Address Space Abstraction Key Features
+
+
+
+
+  Source and destination addresses are specified by source of the request.
+  No storage logically “outside the application address space(s)”
+
+
+Private Address Space Abstraction (Message Passing)
+
+
+
+
+  Each thread is operating within their own private memory space, sending/receiving data is the only way to communicat...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>CUDA based mmWave Radar Object Detection acceleration</title>
+    <link href="http://localhost:4000/posts/CUDA-Accelerated-object-Detection/" rel="alternate" type="text/html" title="CUDA based mmWave Radar Object Detection acceleration" />
+    <published>2023-03-30T00:00:00-04:00</published>
+  
+    <updated>2023-03-30T00:00:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/CUDA-Accelerated-object-Detection/</id>
+    <content src="http://localhost:4000/posts/CUDA-Accelerated-object-Detection/" />
+    <author>
+      <name>Jiajun (Max) Hu</name>
+    </author>
+
+  
+    
+    <category term="Hardware Acceleration" />
+    
+    <category term="projects" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Summary
+
+We are aiming to accelerate a object detection algorithm using CUDA to achieve pipelined low-latency real-time processing. We will also try to accelerate this application using OMP for benchmarking and evaluation.
+
+Background
+
+mmWave radar is a widely applied device in modern moving object detection for autonomous driving application. At the same time, GPU or CUDA programming provides ...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
