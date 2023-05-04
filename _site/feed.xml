@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Max HU</title>
   <subtitle>This webpage is only personal use for Max.</subtitle>
-  <updated>2023-04-15T17:27:30-04:00</updated>
+  <updated>2023-05-04T17:23:16-04:00</updated>
   <author>
     <name>Jiajun (Max) Hu</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,44 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>CUDA based mmWave Radar Object Detection acceleration Report</title>
+    <link href="http://localhost:4000/posts/CUDA-Accelerated-object-Detection-Report/" rel="alternate" type="text/html" title="CUDA based mmWave Radar Object Detection acceleration Report" />
+    <published>2023-05-01T00:00:00-04:00</published>
+  
+    <updated>2023-05-01T00:00:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/CUDA-Accelerated-object-Detection-Report/</id>
+    <content src="http://localhost:4000/posts/CUDA-Accelerated-object-Detection-Report/" />
+    <author>
+      <name>Jiajun (Max) Hu</name>
+    </author>
+
+  
+    
+    <category term="Hardware Acceleration" />
+    
+    <category term="projects" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Summary
+
+In this project, we developed two fully functional mmWave-radar object detection frameworks in both CUDA and OMP parallel programming environments for object distance, speed and angle detection tasks. The CUDA based implementation achieves 5x speed up for all 3 tasks comparing to naive sequential CPU based baseline. On the other hand, the OMP based implementation achieves 2x speed in o...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -114,7 +152,7 @@ Private Address Space Abstraction (Message Passing)
     <link href="http://localhost:4000/posts/CUDA-Accelerated-object-Detection/" rel="alternate" type="text/html" title="CUDA based mmWave Radar Object Detection acceleration" />
     <published>2023-03-30T00:00:00-04:00</published>
   
-    <updated>2023-03-30T00:00:00-04:00</updated>
+    <updated>2023-04-15T17:29:32-04:00</updated>
   
     <id>http://localhost:4000/posts/CUDA-Accelerated-object-Detection/</id>
     <content src="http://localhost:4000/posts/CUDA-Accelerated-object-Detection/" />

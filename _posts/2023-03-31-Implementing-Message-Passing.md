@@ -9,23 +9,23 @@ img_path: /assets/
 
 ### Shared Address Space Abstraction Key Features
 
-![img1](/img/notes/image-20230331175612858.png)
+![img1](../assets/img/notes/image-20230331175612858.png)
 
 - Source and destination addresses are specified by source of the request.
 - No storage logically "outside the application address space(s)"
 
 ### Private Address Space Abstraction (Message Passing)
 
-![img2](img/notes/image-20230331175320116.png)
+![img2](../assets/img/notes/image-20230331175320116.png)
 
 - Each thread is operating within their own private memory space, sending/receiving data is the only way to communicate. The synchronization is implicitly achieved when exchanging the data. 
 - The sending and receiving operations can be done both in **synchronous** and **asynchronous** ways. 
 - Source know the sending address, dest knows the recv address, they know both after shaking hands.
 - Arbitrary storage outside the "local address spaces".
 
- ![img3](img/notes/image-20230331180117284.png)![img4](img/notes/image-20230331180240812.png)				
+ ![img3](../assets/img/notes/image-20230331180117284.png)![img4](../assets/img/notes/image-20230331180240812.png)				
 
-![img5](img/notes/image-20230331180640638.png)
+![img5](../assets/img/notes/image-20230331180640638.png)
 
 The synchronous communication controls the send/recv timing precisely, the program will continue only when such a message passing is finished / failed (call returns only when message passing is finished). Asynchronous communication is more flexible, the call will return immediately without knowing the message passing status, there is a possibility fail the communication in later execution. 
 

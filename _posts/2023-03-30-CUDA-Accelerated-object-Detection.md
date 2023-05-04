@@ -55,6 +55,3 @@ RTX GPUs are the popular computing platforms in GPU hardware acceleration both f
 | Week3 (4.16 - 4.22) | - Evaluating the performance in both CPU and GPU platforms <br>- Further exploration in kernel acceleration including improve the performance of FFT kernel and matrix matrix multiplication kernel |
 |  Week4 (4.23-4.29)  | - Further benchmarking CPU platform and GPU platform results including fine-tuning parameters (pipeline stage, core counts and CUDA streaming), re-thinking data migrating path. <br>- Quantitative evaluation the bottlenecks of both CPU and GPU platforms including runing-time cost, data migrating cost, algorithm complexity. |
 | Week5 (4.30 - 5.4)  | - Writing final project report <br>- Preparing for the post presentation session |
-
-​    
-

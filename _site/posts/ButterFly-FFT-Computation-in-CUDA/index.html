@@ -1531,7 +1531,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1534 words">
+  title="1533 words">
   <em>8 min</em> read</span>
 
     </div>
@@ -1547,21 +1547,21 @@
 
 <h3 id="background"><span class="mr-2">Background</span><a href="#background" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>The FFT (Fast Fourier Transform) algorithm is derived from normal DFT (Discrete Fourier Transform), the algorithm complexity is originally in O(n^2)  and then to O(n*log(n)). The computation cost decreases dramatically and the precision/correctness does not degrade. A very common way to implement the FFT in computer is the <strong>Butter Fly</strong> computation method, which utilizes the <strong>Divide and Conquer</strong> idea of computer programming.</p>
+<p>The FFT (Fast Fourier Transform) algorithm is derived from normal DFT (Discrete Fourier Transform), the algorithm complexity is originally in $O(n^2)$  and then to $O(n*log(n))$. The computation cost decreases dramatically and the precision/correctness does not degrade. A very common way to implement the FFT in computer is the <strong>Butter Fly</strong> computation method, which utilizes the <strong>Divide and Conquer</strong> idea of computer programming.</p>
 
-<p>The underlying mathematic concepts of DFT is solving the numerical complex root solution of polynomial A(x) = a_0 + a_1x +a_2x^2+…+a_nx^{n-1}. Denote the transformed array series as  A(w^0_n),A(w^1_n),A(w^2_n)…A(w^{n-1}_n) , where w^i_n ,i=0,1,2,..,n-1 is the N roots of equation W^n=1.  So, to solve an equation of polynomial with length of N, requires O(n) complexity of every term of the polynomial, the total complexity will be  O(n^2)  .</p>
+<p>The underlying mathematic concepts of DFT is solving the numerical complex root solution of polynomial $A(x) = a_0 + a_1x +a_2x^2+…+a_nx^{n-1}$. Denote the transformed array series as  $A(w^0_n),A(w^1_n),A(w^2_n)…A(w^{n-1}_n)$ , where $w^i_n ,i=0,1,2,..,n-1$ is the N roots of equation $W^n=1$.  So, to solve an equation of polynomial with length of N, requires $O(n)$ complexity of every term of the polynomial, the total complexity will be  $O(n^2)$.</p>
 
-<p>However, if we divide the above polynomial based on the even/odd subscription number into 2 polynomial,  A_0(x)=a_0+a_2x+a_4x^4+a_6x^4…  and  A_1(x)=a_1+a_3x+a_5x^2+a_7x^3… , then we have  A(x)=A_0(x^2)+xA_1(x^2) . These two divided sequences can then be further divided recursively into further shorter sequences. Also, according to <strong>Binary Lemma</strong>  W_n^2=w_{n/2} , we have  A(w_n^k)=A_0(w_{n/2}^k)+w_n^kA_1(w_{n/2}^k) . Therefore, the original problem is now becoming solving both the odd subscribed sequences and even subscribed  sequences.</p>
+<p>However, if we divide the above polynomial based on the even/odd subscription number into 2 polynomial,  $A_0(x)=a_0+a_2x+a_4x^4+a_6x^4…$  and  $A_1(x)=a_1+a_3x+a_5x^2+a_7x^3…$ , then we have $A(x)=A_0(x^2)+xA_1(x^2)$ . These two divided sequences can then be further divided recursively into further shorter sequences. Also, according to <strong>Binary Lemma</strong>  $W_n^2=w_{n/2}$ , we have  $A(w_n^k)=A_0(w_{n/2}^k)+w_n^kA_1(w_{n/2}^k)$ . Therefore, the original problem is now becoming solving both the odd subscribed sequences and even subscribed  sequences.</p>
 
-<p>Using N = 8 as an example, the division process are illustrated as follows. Suppose we have  a0,a1,a2,a3,…a8  8 complex roots, and the sub-sequences are  A_0=a_0,a_2,a_4,a_6\ \ \ A_1=a_1,a_3,a_5,a_7 . According to Binary Lemma, we have  A(w_8^k)=A_0(w_4^k)+w_8^kA_1(w_4^k) . The even subscribed sequence is  A_0(w_4^0),A_0(w_4^1),A_0(w_4^2),A_0(w_4^3)  and the odd subscribed sequence is   A_1(w_4^0),A_1(w_4^1),A_1(w_4^2),A_1(w_4^3) . The first term of the original DFT sequence (k=0) should be  A(w_8^0)=A_0(w_4^0)+w_8^0A_1(w_4^0) .</p>
+<p>Using N = 8 as an example, the division process are illustrated as follows. Suppose we have  $a0,a1,a2,a3,…a8$  8 complex roots, and the sub-sequences are  $A_0=a_0,a_2,a_4,a_6\ \ \ A_1=a_1,a_3,a_5,a_7$ . According to Binary Lemma, we have  A(w_8^k)=A_0(w_4^k)+w_8^kA_1(w_4^k) . The even subscribed sequence is  $A_0(w_4^0),A_0(w_4^1),A_0(w_4^2),A_0(w_4^3)$  and the odd subscribed sequence is   $A_1(w_4^0),A_1(w_4^1),A_1(w_4^2),A_1(w_4^3)$ . The first term of the original DFT sequence (k=0) should be  $A(w_8^0)=A_0(w_4^0)+w_8^0A_1(w_4^0)$ .</p>
 
 <p>The following figure illustrates such a division operation.</p>
 
-<p><a href="/assets/img/notes/image-20230410200314520.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230410200314520.png" alt="img1" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230410200314520.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230410200314520.png" alt="img1" class="lazyload" data-proofer-ignore></a></p>
 
-<p>The overall solution of DFT is then converted to solving the roots of each single term and then merge together. The merged results, using  a_0,a_4  as an example, is  a_0+w_1^0a_4  and  a_0-w_1^0a_4 . The merged results are then passed upper towards to the original level. This devision requires complexity  O(log(n))  and the solving processing will cause  O(n) , the overall time complexity will then become  O(n*log(n)) . To better describe such an operation, the scientists use the term “Butterfly Computation” to better feature the divide-merge process, shown below.</p>
+<p>The overall solution of DFT is then converted to solving the roots of each single term and then merge together. The merged results, using  $a_0,a_4$  as an example, is  $a_0+w_1^0a_4$  and  $a_0-w_1^0a_4$ . The merged results are then passed upper towards to the original level. This devision requires complexity  $O(log(n))$  and the solving processing will cause  O(n) , the overall time complexity will then become  $O(n*log(n))$ . To better describe such an operation, the scientists use the term “Butterfly Computation” to better feature the divide-merge process, shown below.</p>
 
-<p><a href="/assets/img/notes/image-20230410201211805.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230410201211805.png" alt="img2" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230410201211805.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230410201211805.png" alt="img2" class="lazyload" data-proofer-ignore></a></p>
 
 <p>It is very straightforward, the merge operation in this Butterfly Computation can be done in parallel as there is no dependency in the merged processes as long as we have calculated the forward factor  w_n^k  for each processes.</p>
 
@@ -1571,58 +1571,58 @@
 
 <h4 id="butterfly-computation"><span class="mr-2">Butterfly Computation</span><a href="#butterfly-computation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>Firstly, we focus on the fundamental ideal of “Butterfly”. Consider the following notation, where  Output[p] = p+\alpha q, Ouput[q] = p-\alpha q . The elements  q,q   are considered as a pair. They cross product with each other, and the lower one will also contribute a coefficient for the corresponding out. The coefficients of the paired and self output are happened to be a pair of opposite number. This kind of operation is a “<strong>Butterfly Computation</strong>”. This is the fundamental element in FFT algorithm,</p>
+<p>Firstly, we focus on the fundamental ideal of “Butterfly”. Consider the following notation, where  $Output[p] = p+\alpha q, Ouput[q] = p-\alpha q$ . The elements  q,q   are considered as a pair. They cross product with each other, and the lower one will also contribute a coefficient for the corresponding out. The coefficients of the paired and self output are happened to be a pair of opposite number. This kind of operation is a “<strong>Butterfly Computation</strong>”. This is the fundamental element in FFT algorithm,</p>
 
-<p><a href="/assets/img/notes/image-20230415153435881.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230415153435881.png" alt="img3" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230415153435881.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415153435881.png" alt="img3" class="lazyload" data-proofer-ignore></a></p>
 
 <h4 id="bit-reversal--4-point-fft-example"><span class="mr-2">Bit-Reversal &amp; 4-point FFT Example</span><a href="#bit-reversal--4-point-fft-example" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>Lets do a review / summary of the mathematical concepts at this time. The DFT formula is written as below. The complete input signal is  a[n]  and the corresponding kth output spectrum is  A[k] . In other words, for a complete input signal  a[n] , we have  FFT(a[k])=A[k] . For each element in the input signal, it requires N number of summation to give the exact output. For N elements, it normally require N^2 operations in conventional DFT.</p>
+<p>Lets do a review / summary of the mathematical concepts at this time. The DFT formula is written as below. The complete input signal is  $a[n]$  and the corresponding kth output spectrum is  $A[k]$ . In other words, for a complete input signal  a[n] , we have  $FFT(a[k])=A[k]$ . For each element in the input signal, it requires N number of summation to give the exact output. For N elements, it normally require N^2 operations in conventional DFT.</p>
 
-<p><a href="/assets/img/notes/image-20230415172257909.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230415172257909.png" alt="image-20230415172257909" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230415172257909.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415172257909.png" alt="image-20230415172257909" class="lazyload" data-proofer-ignore></a></p>
 
-<p>A_k=\sum^{N-1}_{n=0}W_N^{kn}a_n<br />
-W_N=e^{-i2\pi/N}</p>
+<p>$A_k=\sum^{N-1}_{n=0}W_N^{kn}a_n<br />
+W_N=e^{-i2\pi/N}$</p>
 
 <p>However, in our later illustration, we will found that, there are some redundant computation in common DFT, due to the periodicity and complex number features of the DFT formula, which will eventually lead to a simplified FFT algorithm.</p>
 
-<p>Firstly, we have to understand the term  W_N . Based on the Euler Formula,  W_N^k = e^{-i2k\pi/N}=cos(-2k\pi/N)+jsin(-2k\pi/N) . For  k = 0,1,2..N-1, we call the  W_N^k  the Nth roots of unity, because in the complex arithmetic,  (W_N^k)^N=1  is valid for all the k values. A more concrete illustration is shown below, where the points are plot in a unity circle in the complex plane.</p>
+<p>Firstly, we have to understand the term  W_N . Based on the Euler Formula, $W_N^k = e^{-i2k\pi/N}=cos(-2k\pi/N)+jsin(-2k\pi/N)$ . For  $k = 0,1,2..N-1$, we call the  $W_N^k$  the Nth roots of unity, because in the complex arithmetic,  $(W_N^k)^N=1$  is valid for all the k values. A more concrete illustration is shown below, where the points are plot in a unity circle in the complex plane.</p>
 
-<p><a href="/assets/img/notes/image-20230415155306989.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230415155306989.png" alt="img4" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230415155306989.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415155306989.png" alt="img4" class="lazyload" data-proofer-ignore></a></p>
 
 <p>Consider a 4-point DFT example, (N=4), rewrite the formula in terms of all the input sequences.</p>
 
-<p><a href="/assets/img/notes/image-20230415172216574.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230415172216574.png" alt="image-20230415172216574" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230415172216574.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415172216574.png" alt="image-20230415172216574" class="lazyload" data-proofer-ignore></a></p>
 
-<p>W_4=e^{}-i\pi/2=-i<br />
+<p>$W_4=e^{}-i\pi/2=-i<br />
 A_k=\sum^4_{n=0}(-i)^{kn}a_n=a_0+(-i)^ka_1+(-i)^{2k}a_2+(-i)^{3k}a_3<br />
-=a_0+(-i)^ka_1+(-1)^ka_2+i^ka_3</p>
+=a_0+(-i)^ka_1+(-1)^ka_2+i^ka_3$</p>
 
 <p>Let’s write down all the output.</p>
 
-<p><a href="/assets//img/notes/image-20230415172143801.png" class="popup img-link "><img data-src="/assets//img/notes/image-20230415172143801.png" alt="image-20230415172143801" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="../assets//img/notes/image-20230415172143801.png" class="popup img-link "><img data-src="../assets//img/notes/image-20230415172143801.png" alt="image-20230415172143801" class="lazyload" data-proofer-ignore></a></p>
 
-<p>A_0=a_0+a_1+a_2+a_3<br />
+<p>$A_0=a_0+a_1+a_2+a_3<br />
 A_1=a_0-ia_1-a_2+ia_3<br />
 A_2=a_0-a_1+a_2-a+3<br />
-A_3=a_0+ia_1-a_2-ia_3</p>
+A_3=a_0+ia_1-a_2-ia_3$</p>
 
 <p>To compute A quickly, we can re-compute the common subexpressions:</p>
 
-<p><a href="/assets/img/notes/image-20230415172117293.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230415172117293.png" alt="image-20230415172117293" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230415172117293.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415172117293.png" alt="image-20230415172117293" class="lazyload" data-proofer-ignore></a></p>
 
-<p>A_0=(a_0+a_2)+(a_1+a_3)<br />
+<p>$A_0=(a_0+a_2)+(a_1+a_3)<br />
 A_1=(a_0-a_2)-i(a_1-a_3)<br />
 A_2=(a_0+a_2)-(a_1+a_3)<br />
-A_3=(a_0-a_2)+i(a_1-a_3)\</p>
+A_3=(a_0-a_2)+i(a_1-a_3)\$</p>
 
 <p>Now, if we apply the previous mentioned <strong>Butterfly Computation</strong> here, we can have the following plot.</p>
 
-<p><a href="/assets/img/notes/image-20230415160510922.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230415160510922.png" alt="img5" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230415160510922.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415160510922.png" alt="img5" class="lazyload" data-proofer-ignore></a></p>
 
 <p>Following the same procedure, we can derive the Butterfly Computation Plot for 8-point FFT.</p>
 
-<p><a href="/assets/img/notes/image-20230415161253434.png" class="popup img-link "><img data-src="/assets/img/notes/image-20230415161253434.png" alt="img6" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/assets/../assets/img/notes/image-20230415161253434.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415161253434.png" alt="img6" class="lazyload" data-proofer-ignore></a></p>
 
 <p>In the above 2 plots, we can summarize the following properties for the butterfly coefficient and the indices. For the input side, the butterfly computation applied in the adjacent input element, but the index here is not continuous. Also, there is some pattern in finding the butterfly coefficient, for example, only 1 and -1 in the first stage, and only even numbered butterfly coefficients are used in the second stage.</p>
 
@@ -1683,14 +1683,14 @@ A_3=(a_0-a_2)+i(a_1-a_3)\</p>
 
 <h5 id="butterfly-coefficient-twiddle-factor"><span class="mr-2">Butterfly Coefficient (Twiddle Factor)</span><a href="#butterfly-coefficient-twiddle-factor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<p>The butterfly Coefficient (also called Twiddle Factor) is related to the current FFT stage and the total number of input elements. For fixed factor  W_N=e^{-i2\pi/N} , The absolute value of butterfly coefficient of the input index and current stage is in the following form.</p>
+<p>The butterfly Coefficient (also called Twiddle Factor) is related to the current FFT stage and the total number of input elements. For fixed factor $W_N=e^{-i2\pi/N}$ , The absolute value of butterfly coefficient of the input index and current stage is in the following form.</p>
 
 <p><a href="/assets/../assets/img/notes/image-20230415171943330.png" class="popup img-link "><img data-src="/assets/../assets/img/notes/image-20230415171943330.png" alt="image-20230415171943330" class="lazyload" data-proofer-ignore></a></p>
 
-<p>k = (2^{log2(size) - stage}<em>index)\mod N<br />
+<p>$k = (2^{log2(size) - stage}<em>index)\mod N<br />
 \theta =-2\pi</em>k/N<br />
 W_N^k=e^{-j2\pi<em>k/N}<br />
-W_N^k=cos(\theta)+i</em>sin(\theta)</p>
+W_N^k=cos(\theta)+i</em>sin(\theta)$</p>
 
 <p>For the output of the index, pay attention to the paired index and self-index. In CUDA, each thread is representing an input element, which means, every thread has to find their own paired index. This kind of pairing operation can be done by slicing the indices into several groups based on different stages.</p>
 
@@ -1710,7 +1710,7 @@ W_N^k=cos(\theta)+i</em>sin(\theta)</p>
 12
 13
 14
-</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">Wn_k</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">-</span> <span class="n">stage</span><span class="p">))</span> <span class="o">*</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// compute the power of twiddle factor</span>
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">Wn_k</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">-</span> <span class="n">stage</span><span class="p">))</span> <span class="o">*</span> <span class="n">idx</span> <span class="err">$</span> <span class="n">size</span><span class="p">;</span> <span class="c1">// compute the power of twiddle factor</span>
 <span class="kt">double</span> <span class="n">theta</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">Wn_k</span> <span class="o">/</span> <span class="n">size</span><span class="p">;</span>
 <span class="n">Complex_t</span> <span class="n">twiddle</span><span class="p">;</span>
 <span class="n">twiddle</span><span class="p">.</span><span class="n">real</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
@@ -1805,7 +1805,7 @@ W_N^k=cos(\theta)+i</em>sin(\theta)</p>
     <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// calculate butterfly coefficient pow_tester</span>
-        <span class="kt">int</span> <span class="n">Wn_k</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">pow</span> <span class="o">-</span> <span class="n">stage</span><span class="p">))</span> <span class="o">*</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">Wn_k</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">pow</span> <span class="o">-</span> <span class="n">stage</span><span class="p">))</span> <span class="o">*</span> <span class="n">idx</span> <span class="err">$</span> <span class="n">size</span><span class="p">;</span>
         <span class="c1">// butterfly coefficient = Wn ^ Wn_k</span>
         <span class="c1">// Wn = e^(-2j*pi/Size)</span>
         <span class="c1">// Wn ^ Wn_k = e ^ (-2j*pi*Wn_k/Size)</span>
@@ -1954,6 +1954,20 @@ W_N^k=cos(\theta)+i</em>sin(\theta)</p>
 
 
 
+  <div id="access-lastmod" class="post">
+    <div class="panel-heading">Recently Updated</div>
+    <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/CUDA-Accelerated-object-Detection/">CUDA based mmWave Radar Object Detection acceleration</a></li>
+      
+    </ul>
+  </div> <!-- #access-lastmod -->
+
+
+
       
 
 
@@ -2062,6 +2076,19 @@ W_N^k=cos(\theta)+i</em>sin(\theta)</p>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -2102,6 +2129,12 @@ W_N^k=cos(\theta)+i</em>sin(\theta)</p>
   
     
     
+      
+      
+    
+  
+    
+    
   
     
     
@@ -2110,15 +2143,7 @@ W_N^k=cos(\theta)+i</em>sin(\theta)</p>
         
         
         
-      
-    
-  
-    
-    
-      
-      
-    
-  
+          
 
 
 
@@ -2160,6 +2185,45 @@ W_N^k=cos(\theta)+i</em>sin(\theta)</p>
                 Summary
 
 We are aiming to accelerate a object detection algorithm using CUDA to achieve pipelined low-latency real-time processing. We will also try to accelerate this application using OMP for ben...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/CUDA-Accelerated-object-Detection-Report/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1682913600"
+    data-df="ll"
+    >
+  May  1, 2023
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>CUDA based mmWave Radar Object Detection acceleration Report</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Summary
+
+In this project, we developed two fully functional mmWave-radar object detection frameworks in both CUDA and OMP parallel programming environments for object distance, speed and angle dete...
               </p>
             </div>
           </div>
@@ -2230,10 +2294,10 @@ Shared Address Space Abstraction Key Features
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/CUDA-Accelerated-object-Detection-Report/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </div>
+    <p>CUDA based mmWave Radar Object Detection acceleration Report</p>
+  </a>
   
 
 </div>
