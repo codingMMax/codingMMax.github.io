@@ -6,7 +6,9 @@ tags: [CUDA]
 ---
 ## Summary
 
-We are aiming to accelerate a object detection algorithm using CUDA to achieve pipelined low-latency real-time processing. We will also try to accelerate this application using OMP for benchmarking and evaluation.  
+We are aiming to accelerate a object detection algorithm using CUDA to achieve pipelined low-latency real-time processing. We will also try to accelerate this application using OMP for benchmarking and evaluation.
+
+**GitHub Repo Link** [CUDA-Acceleration](https://github.com/codingMMax/CUDA-based-mmWave-Radar-Object-Detection-Acceleration.git)
 
 ## Background
 
