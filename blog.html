@@ -9,14 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Sixun Dong</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
-    
+    <title>Blog - Jiajun (Max) Hu</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="blog-comments.css">
@@ -36,7 +29,7 @@
                 <a href="index.html" class="nav-link " >Bio</a>
                 <a href="publications.html" class="nav-link " >Publications</a>
                 <a href="blog.html" class="nav-link active" >Blog</a>
-                <a href="files/CV_Dong.pdf" class="nav-link " target="_blank">CV(PDF)</a>
+                <a href="files/CV-JiajunHu-ASU.pdf" class="nav-link " target="_blank">CV(PDF)</a>
             </div>
         </nav>
     </header>
@@ -131,7 +124,7 @@
                 <p>Built with <a href="https://github.com/Ironieser/ironieser.github.io" target="_blank" rel="noopener">Config-Driven Academic Website Template</a> by <a href="https://github.com/Ironieser/ironieser.github.io" target="_blank" rel="noopener">Sixun Dong (ironieser)</a></p>
                 <p class="template-acknowledgments">Built with the help of Cursor IDE, Claude AI, and GPT - enabling non-experts to create personalized academic websites through modern AI tools</p>
             </div>
-            <p>&copy; 2025 Sixun Dong. All rights reserved.</p>
+            <p>&copy; 2025 Jiajun (Max) Hu. All rights reserved.</p>
         </div>
     </footer>
     
@@ -335,7 +328,7 @@
                         showBlogPost(postId);
                     });
                 });
-
+                
                 document.querySelectorAll('.blog-item.internal-post').forEach(item => {
                     item.addEventListener('click', function() {
                         const postId = this.getAttribute('data-post-id');
@@ -486,39 +479,16 @@
         
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if blog data is already loaded
-            if (typeof window.BLOG_DATA !== 'undefined') {
-                console.log('Blog data already loaded, initializing...');
-                initializeBlog();
-                return;
-            }
-            
-            // Wait for blog-data.js to load with progressive timeout
-            let attempts = 0;
-            const maxAttempts = 50; // 5 seconds total
-            
-            function checkBlogData() {
-                attempts++;
-                
+            // Wait a bit for blog-data.js to load
+            setTimeout(function() {
                 if (typeof window.BLOG_DATA !== 'undefined') {
-                    console.log('Blog data loaded after', attempts * 100, 'ms');
                     initializeBlog();
-                } else if (attempts < maxAttempts) {
-                    setTimeout(checkBlogData, 100);
                 } else {
-                    console.error('Blog data failed to load after 5 seconds');
+                    console.error('Blog data not loaded');
                     document.getElementById('blog-loading').style.display = 'none';
-                    document.getElementById('no-posts-message').innerHTML = `
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Failed to Load Blog Data</h3>
-                        <p>The blog data could not be loaded. Please try refreshing the page.</p>
-                        <button onclick="location.reload()" class="btn btn-primary">Refresh Page</button>
-                    `;
                     document.getElementById('no-posts-message').style.display = 'block';
                 }
-            }
-            
-            checkBlogData();
+            }, 100);
         });
     </script>
     
@@ -554,19 +524,19 @@
                 }
                 
                 // If all APIs fail, show a default message
-                document.getElementById('owner-location').textContent = 'GitHub Actions';
+                document.getElementById('owner-location').textContent = 'Local Build';
                 
             } catch (error) {
                 console.log('Location detection failed:', error);
-                // For GitHub Actions builds, show a more appropriate message
-                document.getElementById('owner-location').textContent = 'GitHub Actions';
+                // For local builds, show a more appropriate message
+                document.getElementById('owner-location').textContent = 'Local Build';
             }
         }
         
-        // Set last updated time (when GitHub Actions built the site)
+        // Set last updated time (when site was built)
         function setLastUpdated() {
-            const buildDate = '2025-08-25';
-            const date = new Date(buildDate + 'T12:00:00'); // Add noon time to avoid timezone issues
+            const buildDate = '2025-09-11';
+            const date = new Date(buildDate);
             const formatted = date.toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'short', 
