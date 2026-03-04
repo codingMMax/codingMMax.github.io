@@ -69,7 +69,7 @@
 
     {
       "date": "Jul 2025",
-      "content": "<strong>CarbonSet</strong> is accepted to GLSVLSI'25. Checkout the paper <a href=\"https://dl.acm.org/doi/abs/10.1145/3716368.3735235?download=true\" class=\"link\">paper</a> and <a href=\"https://github.com/advent-lab/CarbonSet\" class=\"link\">GitHub repo</a>!"            
+      "content": "<strong>CarbonSet</strong> is accepted to GLSVLSI'25. Our CarbonSet containing 1600+ desktop and datacenter CPUs/GPUs covering design, performance, and sustainaiblity metric! Checkout the paper <a href=\"https://dl.acm.org/doi/abs/10.1145/3716368.3735235?download=true\" class=\"link\">paper</a> and <a href=\"https://github.com/advent-lab/CarbonSet\" class=\"link\">GitHub repo</a>!"            
     ,
       "category": "papers"
     },
