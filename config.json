@@ -15,15 +15,16 @@
   },
   "personal": {
     "name": "Jiajun (Max) Hu",
-    "title": "PhD Student in Computer Engneering",
+    "title": "PhD Student in Computer Engineering",
     "affiliation": "Arizona State University",
     "email": "jiajunh5@asu.edu",
     "profile_image": "images/dashu.jpg",
     "cv_link": "files/CV-JiajunHu-ASU.pdf",
     "bio": [
       "I am a PhD student at Arizona State University under <a href=\"https://labs.engineering.asu.edu/advent/\" class=\"link\">Advent Lab</a>.",
-      "I also completed my Master's degree from Carnegie Mellon University supervised by <a href=\"https://users.ece.cmu.edu/~jhoe/doku/doku.php?id=home\" class=\"link\">Prof.James. Hoe</a>.",
-      "My research focuses on <em class=\"research-keywords\">Processing-In-Memory</em> , <em class=\"research-keywords\">Reconfigurable Architecture</em>."
+      "I completed my Master's at Carnegie Mellon University supervised by <a href=\"https://users.ece.cmu.edu/~jhoe/doku/doku.php?id=home\" class=\"link\">Prof. James C. Hoe</a>.",
+      "I also intern as Research Associate at HPE Labs Fort Collins with the <strong>Emerging Accelerator Team</strong>, working on FPGA-ReRAM chiplet architectures.",
+      "My research focuses on <em class=\"research-keywords\">In-/Near-Memory Compute</em>, <em class=\"research-keywords\">FPGA & Reconfigurable Architecture</em>, and <em class=\"research-keywords\">Chiplet-Based AI Systems</em>."
     ],
     "links": [
       {
@@ -59,33 +60,141 @@
     ]
   },
   "research": {
-    "description": "",
+    "description": "In-/near-memory compute for FPGAs, chiplet-based AI systems, and sustainable computing.",
     "stats": [
-      "Trying to ramp up more publications"
+      "3 accepted papers (FPL'26, PACT'26, GLSVLSI'25) · 2 arXiv preprints"
     ],
-    "max_featured_publications":1
+    "max_featured_publications": 3
   },
   "news": [
-
+    {
+      "date": "Aug 2026",
+      "content": "Started as <strong>Research Associate Intern</strong> at HPE Labs Fort Collins, hosted by the Emerging Accelerator Team, working on FPGA-ReRAM chiplet architectures.",
+      "category": "career"
+    },
+    {
+      "date": "Jul 2026",
+      "content": "<strong>NIFA</strong> (Nonlinear IMC Enhanced FPGA for Efficient ML Inference) is accepted to <strong>FPL 2026</strong>!",
+      "category": "papers"
+    },
+    {
+      "date": "Jul 2026",
+      "content": "<strong>RACAM</strong> (Enhancing DRAM with Reuse-Aware Computation and Automated Mapping) is accepted to <strong>PACT 2026</strong>!",
+      "category": "papers"
+    },
+    {
+      "date": "Jul 2026",
+      "content": "<strong>BRAM-DSP</strong> (Boosting FPGA Performance with Direct BRAM-DSP Paths) now on arXiv! Check the <a href=\"https://arxiv.org/abs/2607.05756\" class=\"link\">paper</a>.",
+      "category": "papers"
+    },
+    {
+      "date": "Mar 2026",
+      "content": "<strong>CarbonPATH</strong> (Carbon-aware pathfinding for chiplet-based AI systems) now on arXiv! Check the <a href=\"https://arxiv.org/abs/2603.03878\" class=\"link\">paper</a>.",
+      "category": "papers"
+    },
     {
       "date": "Jul 2025",
-      "content": "<strong>CarbonSet</strong> is accepted to GLSVLSI'25. Our CarbonSet containing 1600+ desktop and datacenter CPUs/GPUs covering design, performance, and sustainaiblity metric! Checkout the paper <a href=\"https://dl.acm.org/doi/abs/10.1145/3716368.3735235?download=true\" class=\"link\">paper</a> and <a href=\"https://github.com/advent-lab/CarbonSet\" class=\"link\">GitHub repo</a>!"            
-    ,
+      "content": "<strong>CarbonSet</strong> is accepted to GLSVLSI'25. Check out the <a href=\"https://dl.acm.org/doi/abs/10.1145/3716368.3735235?download=true\" class=\"link\">paper</a> and <a href=\"https://github.com/advent-lab/CarbonSet\" class=\"link\">GitHub repo</a>!",
       "category": "papers"
     },
     {
       "date": "Jun. 2025",
-      "content": "Attending DAC'2025 in SF. Attending poster session for <strong>Sustainable Computing</strong>",
+      "content": "Attending DAC'2025 in SF. Attending poster session for <strong>Sustainable Computing</strong>.",
       "category": "career"
     },
     {
       "date": "Aug 2024",
-      "content": "Started PhD program at Arizona State University",
+      "content": "Started PhD program at Arizona State University.",
       "category": "career"
     }
   ],
   "publications": {
+    "2026": [
+      {
+        "title": "NIFA: Nonlinear IMC Enhanced FPGA for Efficient ML Inference",
+        "authors": [
+          "Jiajun Hu",
+          "Ruthwik Reddy Sunketa",
+          "Lei Zhao",
+          "Archit Gajjar",
+          "Luca Buonanno",
+          "Aman Arora"
+        ],
+        "venue": "FPL 2026 (accepted)",
+        "venue_type": "Conference Paper",
+        "image": "images/nifa-1.png",
+        "featured": true,
+        "links": [
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2607.15123",
+            "icon": "ai ai-arxiv"
+          }
+        ]
+      },
+      {
+        "title": "CarbonPATH: Carbon-Aware Pathfinding and Architecture Optimization for Chiplet-Based AI Systems",
+        "authors": [
+          "Chetan Choppali Sudarshan",
+          "Jiajun Hu",
+          "Aman Arora",
+          "Vidya A. Chhabria"
+        ],
+        "venue": "arXiv preprint (under review)",
+        "venue_type": "preprint",
+        "image": "images/carbon-path.png",
+        "featured": false,
+        "links": [
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2603.03878",
+            "icon": "ai ai-arxiv"
+          }
+        ]
+      },
+      {
+        "title": "Boosting FPGA Performance with Direct BRAM-DSP Paths",
+        "authors": [
+          "Jiajun Hu",
+          "Ruthwik Reddy Sunketa",
+          "Andrew Boutros",
+          "Aman Arora"
+        ],
+        "venue": "arXiv preprint (under review)",
+        "venue_type": "preprint",
+        "image": "images/bramdsp-1.png",
+        "featured": false,
+        "links": [
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2607.05756",
+            "icon": "ai ai-arxiv"
+          }
+        ]
+      }
+    ],
     "2025": [
+      {
+        "title": "RACAM: Enhancing DRAM with Reuse-Aware Computation and Automated Mapping for ML Inference",
+        "authors": [
+          "Siyuan Ma",
+          "Jiajun Hu",
+          "Jeeho Ryoo",
+          "Aman Arora",
+          "Lizy Kurian John"
+        ],
+        "venue": "PACT 2026 (accepted)",
+        "venue_type": "Conference Paper",
+        "image": "images/sys_overview.png",
+        "featured": true,
+        "links": [
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2512.09304",
+            "icon": "ai ai-arxiv"
+          }
+        ]
+      },
       {
         "title": "CarbonSet: A Dataset to Analyze Trends and Benchmark the Sustainability of CPUs and GPUs",
         "authors": [
@@ -95,7 +204,7 @@
           "Vidya Chhabria",
           "Aman Arora"
         ],
-        "venue": "GLSL-VLSI'25",
+        "venue": "GLSVLSI '25",
         "venue_type": "Conference Paper",
         "image": "images/carbonset.png",
         "featured": true,
@@ -114,39 +223,43 @@
         ]
       }
     ],
-    "survey": [
-    ]
+    "survey": []
   },
   "experience": [
     {
+      "position": "Research Associate Intern",
+      "company": "HPE Labs — Emerging Accelerator Team",
+      "period": "May 2026 - Present",
+      "description": "Developing FPGA-ReRAM chiplet architectures for efficient LLM inference and exploring design-space trade-offs of ReRAM-IMC-enhanced FPGA chiplets.",
+      "logo": "images/hpe-logo.png"
+    },
+    {
       "position": "Research Assistant",
-      "company": "Advent Lab ASU",
+      "company": "Advent Lab, Arizona State University",
       "period": "May 2024 - Present",
-      "description": "Researching on Computer Architecture.",
+      "description": "Researching in-/near-memory compute, FPGA architecture, and chiplet-based AI systems.",
       "logo": "images/dashu.jpg"
     }
-
   ],
   "education": [
     {
-      "degree": "Computer Engineering",
+      "degree": "Ph.D. in Computer Engineering",
       "institution": "Arizona State University, USA",
       "period": "2024 - Present",
-      "details": "Focus: Computer Architecuture, Processing-In-Memory, FPGAs"
+      "details": "Focus: In-/Near-Memory Compute, FPGA & Reconfigurable Architecture, Chiplet-Based AI Systems"
     },
     {
       "degree": "M.S. in Electrical & Computer Engineering",
       "institution": "Carnegie Mellon University",
-      "period": "2022-2024",
-      "details": "Advisor: James.Hoe"
+      "period": "2022 - 2024",
+      "details": "Advisor: Prof. James C. Hoe"
     },
     {
       "degree": "B.E. in Electrical & Electronics Engineering",
       "institution": "University of Nottingham, Ningbo, China",
       "period": "2017 - 2021",
-      "details": "Having really good time at Ningbo"
+      "details": "Focus: Electrical and Electronics Engineering"
     }
-
   ],
   "service": {
     "reviewer": {

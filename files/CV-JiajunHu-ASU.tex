@@ -1,0 +1,147 @@
+% =====================================================================
+% CV - Jiajun Hu
+% Source file: files/CV-JiajunHu-ASU.tex
+% Compile: latexmk -xelatex CV-JiajunHu-ASU.tex   (or: latexmk from files/)
+% Dependencies: standard TeX Live (fontspec, xcolor, microtype)
+% =====================================================================
+% !TEX program = xelatex
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.5in,top=0.45in,bottom=0.45in]{geometry}
+\usepackage{fontspec}           % XeLaTeX font handling
+\setmainfont{Charter}           % macOS system serif
+\usepackage{microtype}          % better justification and spacing
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% --- Palette -----------------------------------------------------------
+\definecolor{navy}{RGB}{22,45,95}
+\definecolor{gray}{RGB}{95,95,95}
+
+\hypersetup{colorlinks=true,urlcolor=navy,linkcolor=black,pdftitle={Jiajun Hu CV}}
+
+\pagestyle{empty}
+\raggedbottom                 % do not stretch glue to fill the page
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% Readable body on a comfortable baseline
+\makeatletter
+\AtBeginDocument{\fontsize{9.5}{11}\selectfont}
+\makeatother
+
+% --- Section heading --------------------------------------------
+\newcommand{\cvsection}[1]{%
+  \vspace{3pt}\par\nopagebreak
+  {\normalsize\bfseries\color{navy}#1\par}\vspace{1pt}\nopagebreak
+  {\color{navy}\hrule width\linewidth height0.7pt}\nopagebreak
+  \vspace{2pt}\nopagebreak}
+
+% --- Entry: bold title left, gray location/date right -------------------
+\newcommand{\entry}[2]{\textbf{#1}\hfill{\color{gray}#2}\par}
+
+% --- Bullet list with comfortable spacing -------------------------------
+\newenvironment{cvlist}{%
+  \begin{list}{\textbullet}{%
+    \setlength{\itemsep}{3pt}\setlength{\parsep}{0pt}%
+    \setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}%
+    \setlength{\leftmargin}{1.2em}\setlength{\labelwidth}{0.7em}%
+    \setlength{\labelsep}{0.5em}}}%
+  {\end{list}}
+
+\begin{document}
+
+% =====================================================================
+% HEADER
+% =====================================================================
+{\centering
+  {\fontsize{19}{22}\selectfont\bfseries\color{navy}Jiajun Hu}\\[5pt]
+  \small\color{gray}(412) 726-8574\ \textbar\
+  \href{mailto:jiajunh5@asu.edu}{jiajunh5@asu.edu}\ \textbar\
+  \href{https://codingmmax.github.io/}{codingmmax.github.io}\par}
+\vspace{4pt}
+
+% =====================================================================
+% EDUCATION
+% =====================================================================
+\cvsection{Education}
+
+\entry{Arizona State University}{Tempe, AZ}
+\emph{Ph.D. in Computer Engineering}\hfill{\color{gray}08/2024 -- Present}
+
+\entry{Carnegie Mellon University}{Pittsburgh, PA}
+\emph{Master of Science in Electrical and Computer Engineering}\hfill{\color{gray}02/2022 -- 12/2024}
+
+\entry{University of Nottingham, Ningbo, China}{Ningbo, China}
+\emph{Bachelor of Engineering in Electrical and Electronics Engineering}\hfill{\color{gray}09/2017 -- 07/2021}
+
+% =====================================================================
+% EXPERIENCE
+% =====================================================================
+\cvsection{Experience}
+
+\entry{Research Associate Intern --- HPE Labs}{Fort Collins, CO}
+\emph{Emerging Accelerator Team}\hfill{\color{gray}05/2026 -- Present}
+\begin{cvlist}
+  \item Developing FPGA-ReRAM chiplet architectures for efficient LLM inference and memory-intensive acceleration.
+  \item Exploring the design space of ReRAM-IMC-enhanced FPGA chiplets for emerging LLM workloads.
+\end{cvlist}
+
+% =====================================================================
+% SKILLS
+% =====================================================================
+\cvsection{Skills}
+
+\textbf{Programming:}\ C/C++, Python, SystemVerilog, CUDA\\
+\textbf{Tools:}\ Verilog-to-Routing (VTR), Synopsys Design Compiler, Verilator, Git
+
+% =====================================================================
+% RESEARCH SUMMARY
+% =====================================================================
+\cvsection{Research Summary}
+
+\textbf{FPGA Architectures with In-/Near-Memory Compute for Deep Learning}
+\begin{cvlist}
+  \item ReRAM-enhanced FPGA architectures with design-space exploration and mapping for deep learning.
+  \item Chiplet-based FPGA-ReRAM architectures for LLM inference.
+  \item Direct BRAM-DSP paths with placement-aware CAD extensions.
+\end{cvlist}
+
+\textbf{Efficient Mapping and Analytical Frameworks for Compute-in-Memory Architectures}
+\begin{cvlist}
+  \item Fast automated mapping for compute-in-DRAM architectures.
+  \item Reuse-aware GEMM/GEMV performance modeling for compute-in-DRAM architectures.
+\end{cvlist}
+
+% =====================================================================
+% SELECTED PROJECTS
+% =====================================================================
+\cvsection{Selected Projects}
+
+\textbf{\emph{NIFA}: Non-Linear IMC Enhanced FPGA for Efficient ML Inference}
+\begin{cvlist}
+  \item Designed an FPGA architecture with ReRAM-based in-memory computing (IMC) blocks providing in-block nonlinear function support.
+  \item Accelerated attention computation via a log/exp-based decomposition, exploiting the nonlinear capability of the ReRAM IMC blocks.
+\end{cvlist}
+
+\textbf{\emph{RACAM}: Reuse-Aware In-DRAM Bit-Serial PIM with Automated Mapping}
+\begin{cvlist}
+  \item Designed and implemented an in-DRAM bit-serial analytical performance simulator supporting end-to-end LLM workloads across a range of GEMM/GEMV kernels.
+  \item Extended the simulator to enable flexible GEMM/GEMV mapping schemes optimized for DRAM architectures, determining the optimal data layout for each LLM kernel to enhance DRAM-PIM efficiency.
+  \item Performed area estimation of DRAM-integrated peripheral units using Synopsys Design Compiler.
+\end{cvlist}
+
+% =====================================================================
+% PUBLICATIONS
+% =====================================================================
+\cvsection{Publications}
+
+\begin{cvlist}
+  \item \textbf{Jiajun Hu}, Ruthwik Reddy Sunketa, Lei Zhao, Archit Gajjar, Luca Buonanno, and Aman Arora. \emph{NIFA: Nonlinear IMC Enhanced FPGA for Efficient ML Inference}. In \emph{Proc.\ FPL 2026} (to appear). \href{https://arxiv.org/abs/2607.15123}{arXiv:2607.15123}
+  \item Siyuan Ma, \textbf{Jiajun Hu}, Jeeho Ryoo, Aman Arora, and Lizy Kurian John. \emph{RACAM: Enhancing DRAM with Reuse-Aware Computation and Automated Mapping for ML Inference}. In \emph{Proc.\ PACT 2026} (to appear). \href{https://arxiv.org/abs/2512.09304}{arXiv:2512.09304}
+  \item \textbf{Jiajun Hu}, Chetan Choppali Sudarshan, Maxwell Clifford, Vidya Chhabria, and Aman Arora. \emph{CarbonSet: A Dataset to Analyze Trends and Benchmark the Sustainability of CPUs and GPUs}. In \emph{Proc.\ GLSVLSI '25}, pp.~177--184. \href{https://doi.org/10.1145/3716368.3735235}{doi:10.1145/3716368.3735235}
+  \item Chetan Choppali Sudarshan, \textbf{Jiajun Hu}, Aman Arora, and Vidya A. Chhabria. \emph{CarbonPATH: Carbon-aware pathfinding and architecture optimization for chiplet-based AI systems}. arXiv preprint (under review). \href{https://arxiv.org/abs/2603.03878}{arXiv:2603.03878}
+  \item \textbf{Jiajun Hu}, Ruthwik Reddy Sunketa, Andrew Boutros, and Aman Arora. \emph{Boosting FPGA Performance with Direct BRAM-DSP Paths}. arXiv preprint (under review). \href{https://arxiv.org/abs/2607.05756}{arXiv:2607.05756}
+\end{cvlist}
+
+\end{document}
