@@ -1,0 +1,164 @@
+% =====================================================================
+% CV - Jiajun Hu (Chinese version)
+% Source file: files/CV-JiajunHu-CH.tex   (English version: CV-JiajunHu-EN.tex)
+% Compile: latexmk -xelatex CV-JiajunHu-CH.tex   (or: latexmk from files/)
+% Dependencies: TeX Live with xeCJK (fontspec, xeCJK, xcolor, microtype);
+%               macOS fonts Charter, Songti SC
+% =====================================================================
+% !TEX program = xelatex
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.6in,top=0.55in,bottom=0.55in]{geometry}
+\usepackage{fontspec}           % XeLaTeX font handling
+\setmainfont{Charter}           % macOS system serif
+\usepackage{xeCJK}              % Chinese fonts, punctuation, and line breaking
+\setCJKmainfont{Songti SC}[     % macOS system Song; Chinese has no italics, so emphasis stays upright
+  BoldFont={Songti SC Bold},
+  ItalicFont={Songti SC},
+  BoldItalicFont={Songti SC Bold}]
+\usepackage{microtype}          % better justification and spacing
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% --- Palette -----------------------------------------------------------
+\definecolor{navy}{RGB}{22,45,95}
+\definecolor{gray}{RGB}{95,95,95}
+
+\hypersetup{colorlinks=true,urlcolor=navy,linkcolor=black,pdftitle={胡嘉峻 简历}}
+
+\pagestyle{empty}
+\raggedbottom                 % do not stretch glue to fill the page
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}       % vertical spacing is set explicitly by the macros below
+\setlength{\emergencystretch}{1.5em}  % lets long venue names and unbreakable links wrap
+
+% --- Type scale: section > entry title > detail lines and bullets -------
+\newcommand{\bodysize}{\fontsize{10}{13}\selectfont}      % summary text
+\newcommand{\titlesize}{\fontsize{10.5}{13}\selectfont}   % school, employer, project titles
+\newcommand{\detailsize}{\fontsize{9.5}{12}\selectfont}   % degrees, venues, dates, bullets
+\AtBeginDocument{\bodysize}
+
+% --- Section heading --------------------------------------------
+\newcommand{\cvsection}[1]{%
+  \needspace{6\baselineskip}\vspace{9pt}\nopagebreak
+  {\fontsize{12.5}{15}\selectfont\bfseries\color{navy}#1\par}\vspace{2pt}\nopagebreak
+  {\color{navy}\hrule width\linewidth height0.7pt}\nopagebreak
+  \vspace{4pt}\nopagebreak}
+
+% --- Entry: bold title left, gray location right; \subentry: smaller detail line below ---
+\newcommand{\entry}[2]{\par\vspace{3pt}{\titlesize\textbf{#1}\hfill{\detailsize\color{gray}#2}\par}\nopagebreak}
+\newcommand{\subentry}[2]{{\detailsize #1\hfill{\color{gray}#2}\par}\nopagebreak}  % upright: italic Latin beside CJK looks patchy
+
+% --- Break the page early if less than #1 of space remains (minimal needspace) ---
+\makeatletter
+\newcommand{\needspace}[1]{\par\penalty-100\begingroup
+  \setlength{\dimen@}{#1}\dimen@ii\pagegoal\advance\dimen@ii-\pagetotal
+  \ifdim\dimen@>\dimen@ii\ifdim\dimen@ii>\z@\vfil\fi\penalty-\@M\fi\endgroup}
+\makeatother
+
+% --- Project inside an entry: bold title, venue in gray italics below ---
+\newcommand{\project}[2]{\needspace{7\baselineskip}\vspace{7pt}{\titlesize\textbf{#1}\par}\nopagebreak{\detailsize\color{gray}\emph{#2}\par}\nopagebreak}
+
+% --- Bullet list: smaller than titles, with air between items ------------
+\newenvironment{cvlist}{%
+  \detailsize
+  \begin{list}{\textbullet}{%
+    \setlength{\itemsep}{4.5pt}\setlength{\parsep}{0pt}%
+    \setlength{\topsep}{3pt}\setlength{\partopsep}{0pt}%
+    \setlength{\leftmargin}{1.2em}\setlength{\labelwidth}{0.7em}%
+    \setlength{\labelsep}{0.5em}}}%
+  {\end{list}}
+
+\begin{document}
+
+% =====================================================================
+% HEADER
+% =====================================================================
+{\centering
+  {\fontsize{22}{26}\selectfont\bfseries\color{navy}胡嘉峻}\\[6pt]
+  \detailsize\color{gray}19883032402\ \ \textbar\ \
+  \href{mailto:jiajunh5@asu.edu}{jiajunh5@asu.edu}\ \ \textbar\ \
+  \href{https://codingmmax.github.io/}{codingmmax.github.io}\par}
+\vspace{6pt}
+
+% =====================================================================
+% SUMMARY
+% =====================================================================
+\cvsection{个人简介}
+
+计算机工程博士生，研究方向为 FPGA 体系结构与 CAD、存内计算及 DRAM-PIM，面向 ML/LLM 推理。熟悉 Verilog/\allowbreak SystemVerilog RTL、Synopsys DC、VTR/VPR（C++）与 Python 性能/能耗/面积建模。
+
+% =====================================================================
+% EDUCATION
+% =====================================================================
+\cvsection{教育背景}
+
+\entry{亚利桑那州立大学}{美国亚利桑那州坦佩}
+\subentry{计算机工程 · 博士}{2024.08 -- 至今}
+
+\entry{卡内基梅隆大学}{美国宾夕法尼亚州匹兹堡}
+\subentry{电气与计算机工程 · 理学硕士}{2022.02 -- 2024.12}
+
+\entry{宁波诺丁汉大学}{中国宁波}
+\subentry{电气与电子工程 · 工学学士}{2017.09 -- 2021.07}
+
+% =====================================================================
+% INDUSTRY EXPERIENCE
+% =====================================================================
+\cvsection{实习经历}
+
+\entry{HPE Labs·研究实习生}{美国科罗拉多州柯林斯堡}
+\subentry{新兴加速器团队}{2026.05 -- 至今}
+\begin{cvlist}
+  \item 研发面向 LLM 推理的 FPGA--ReRAM 存内计算 chiplet 架构。
+  \item 构建系统级性能、能耗与面积模型，用于 chiplet 设计空间探索。
+\end{cvlist}
+
+% =====================================================================
+% RESEARCH EXPERIENCE
+% =====================================================================
+\cvsection{科研经历}
+
+\entry{亚利桑那州立大学·研究助理}{美国亚利桑那州坦佩}
+\subentry{FPGA 体系结构与 CAD、存内计算}{2024.08 -- 至今}
+
+\project{\emph{NIFA}：面向高效 ML 推理的非线性存内计算 FPGA}{International Conference on Field-Programmable Logic and Applications (FPL), 2026}
+\begin{cvlist}
+  \item 提出面向 FPGA 的无 ADC ReRAM 存内计算（IMC）模块，以模拟 CAM（ACAM）实现非线性运算与对数域注意力。
+  \item 在 VTR 中以 ResNet-9、VGG-11、BERT-Tiny benchmark 评估架构的 Fmax、线长与面积。
+  \item 开展面向 FPGA 的 crossbar 尺寸与 IMC 面积占比设计空间探索。
+  \item 扩展 Python IMC-FPGA 模拟器，评估端到端性能、能耗与面积。
+  \item 相比 SOTA，在 CNN/Transformer 上能效最高提升 40$\times$/1.9$\times$，面积效率提升 4.1$\times$/2.5$\times$。
+  \item 构建 Verilog IP 库（GEMM、动态矩阵乘、online softmax、attention），与 Python/NumPy 参考模型周期级对齐。
+\end{cvlist}
+
+\project{FPGA BRAM-DSP 直连通路}{International Conference on Field-Programmable Technology (FPT), 2026}
+\begin{cvlist}
+  \item 提出 BRAM$\rightarrow$DSP 硬化直连通路，绕过全局布线网络，面积与延迟开销可忽略（Synopsys DC，FreePDK45）。
+  \item 用 C++ 扩展 VPR 布局器，加入跨类型布局宏与基于连接度的布局优先级。
+  \item 搭建 Python 布局布线评估流程，以 FC、Conv、attention、LSTM benchmark 评估架构。
+  \item 在 DL 设计上 Fmax 最高提升 25\%，线长最多降低 49\%。
+\end{cvlist}
+
+\project{\emph{RACAM}：支持数据复用与自动映射的 DRAM 位串行 PIM}{International Conference on Parallel Architectures and Compilation Techniques (PACT), 2026}
+\begin{cvlist}
+  \item 基于 LLMCompass（Python）构建初版 DRAM 位串行 GEMM/GEMV 性能模型。
+  \item 设计初版分块与映射搜索（array/bank/device 分块、广播、循环顺序）。
+  \item 用 SystemVerilog 实现位串行 PE（整数加法/乘法）及 bank/rank/device 级广播与多路选择逻辑，并以 Synopsys DC 综合。
+  \item 搭建 GPT-3 与 Llama-3.1 prefill/decode 的评估流水线，与 GPU 基线对比。
+\end{cvlist}
+
+% =====================================================================
+% PUBLICATIONS
+% =====================================================================
+\cvsection{学术论文}
+
+\begin{cvlist}\interlinepenalty=10000  % never split one entry across pages
+  \item \textbf{Jiajun Hu}, Ruthwik Reddy Sunketa, Lei Zhao, Archit Gajjar, Luca Buonanno, and Aman Arora. \emph{NIFA: Nonlinear IMC Enhanced FPGA for Efficient ML Inference}. In \emph{International Conference on Field-Programmable Logic and Applications (FPL)}, 2026. \href{https://arxiv.org/abs/2607.15123}{arXiv:2607.15123}
+  \item \textbf{Jiajun Hu}, Ruthwik Reddy Sunketa, Andrew Boutros, and Aman Arora. \emph{Boosting FPGA Performance with Direct BRAM-DSP Paths}. In \emph{International Conference on Field-Programmable Technology (FPT)}, 2026 (short paper). \href{https://arxiv.org/abs/2607.05756}{arXiv:2607.05756}
+  \item Siyuan Ma, \textbf{Jiajun Hu}, Jeeho Ryoo, Aman Arora, and Lizy Kurian John. \emph{RACAM: Enhancing DRAM with Reuse-Aware Computation and Automated Mapping for ML Inference}. In \emph{International Conference on Parallel Architectures and Compilation Techniques (PACT)}, 2026. \href{https://arxiv.org/abs/2512.09304}{arXiv:2512.09304}
+  \item \textbf{Jiajun Hu}, Chetan Choppali Sudarshan, Maxwell Clifford, Vidya Chhabria, and Aman Arora. \emph{CarbonSet: A Dataset to Analyze Trends and Benchmark the Sustainability of CPUs and GPUs}. In \emph{Great Lakes Symposium on VLSI (GLSVLSI)}, 2025, pp.~177--184. \href{https://doi.org/10.1145/3716368.3735235}{doi:10.1145/3716368.3735235}
+  \item Chetan Choppali Sudarshan, \textbf{Jiajun Hu}, Aman Arora, and Vidya A. Chhabria. \emph{CarbonPATH: Carbon-aware pathfinding and architecture optimization for chiplet-based AI systems}. arXiv 预印本 (审稿中). \href{https://arxiv.org/abs/2603.03878}{arXiv:2603.03878}
+\end{cvlist}
+
+\end{document}
